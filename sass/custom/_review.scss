@@ -1,0 +1,134 @@
+/* Review
+========================================================================== */
+
+.review {
+  @include outer-container;
+}
+
+.review__sidebar {
+  @include span-columns(4);
+}
+
+.review__content {
+  @include span-columns(8);
+}
+
+
+/* Info
+========================================================================== */
+
+.review-info {
+  @include outer-container;
+  margin-bottom: 2rem;
+}
+
+.review-info__avatar {
+  @include span-columns(12);
+  @include padding(null null 0.5rem);
+
+  text-align: center;
+}
+
+.review-info__score {
+  @include span-columns(12);
+  @include padding(1rem null);
+
+  color: $green-sea;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.2;
+
+  span {
+    color: $dark-gray;
+    display: block;
+    font-size: 0.9rem;
+
+  }
+}
+
+.review-info__visit {
+  @include span-columns(12);
+  @include padding(1rem null);
+
+  text-align: center;
+  border-bottom: 1px solid darken(white, 15);
+
+  span {
+    @include button(flat, darken($alizarin, 7.5));
+  }
+}
+
+
+/* Other top
+========================================================================== */
+
+.sidebar-host {
+  @include outer-container;
+  margin-top: 3rem;
+
+  h1 {
+    @include padding(0.5rem 1rem);
+
+    background: $belize-hole;
+    color: white;
+    text-align: center;
+  }
+}
+
+.sidebar-host__item {
+  @include margin(1.4rem null);
+
+  .logo {
+    @include span-columns(5);
+  }
+
+  .score {
+    @include span-columns(3);
+
+    color: $green-sea;
+    font-size: 1.75rem;
+    text-align: center;
+
+    .review {
+      color: $belize-hole;
+      display: block;
+      line-height: 0.5;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
+  .visit {
+    @include span-columns(4);
+
+    span {
+      @include button(flat, darken($alizarin, 7.5));
+      @include margin(0.15rem null null null);
+
+      font-size: 0.8rem
+
+    }
+  }
+}
+
+
+/* Review content
+========================================================================== */
+
+.review__content {
+  @include padding(null null null 2rem);
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .visit {
+    font-size: 1.5rem;
+    text-align: center;
+
+    span {
+      @include button(flat, darken($alizarin, 7.5));
+    }
+  }
+}

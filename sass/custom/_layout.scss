@@ -1,0 +1,15 @@
+/* Layout
+========================================================================== */
+
+.outer-container {
+  @include outer-container;
+}
+
+.container {
+  @include span-columns(12);
+  @include padding(2.5rem 1rem 1.25rem);
+
+  @include media($medium-screen-up) {
+    @include padding(null 3rem);
+  }
+}

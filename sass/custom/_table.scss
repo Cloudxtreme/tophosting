@@ -1,0 +1,13 @@
+/* Layout
+========================================================================== */
+
+.top-host {
+  thead {
+    background: $action-color;
+    color: white;
+
+    th {
+      @include padding(null 1rem);
+    }
+  }
+}

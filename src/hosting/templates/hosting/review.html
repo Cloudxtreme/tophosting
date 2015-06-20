@@ -1,0 +1,64 @@
+{% extends "hosting/base.html" %}
+
+{% block content %}
+
+<div class="review">
+  <div class="review__sidebar">
+    <div class="review-info">
+      <div class="review-info__avatar">
+        <img src="{{ hosting.avatar.url }}" />
+      </div>
+      <div class="review-info__visit">
+        <span>
+          Visit site
+        </span>
+      </div>
+      <div class="review-info__score">
+        {{ hosting.score }}
+        <span>
+          score
+        </span>
+      </div>
+    </div>
+
+    <div class="sidebar-host">
+      <h1>
+        Top Hostings of 2015
+      </h1>
+      {% for top_hosting in top_hostings %}
+      <div class="sidebar-host__item">
+        <div class="logo">
+          <img src="{{ top_hosting.logo.url }}" />
+        </div>
+        <div class="score">
+          {{ top_hosting.score }}
+          <div class="review">
+            review
+          </div>
+        </div>
+        <div class="visit">
+          <span>
+            Visit site
+          </span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="review__content">
+    <h1>
+      {{ hosting }} review
+    </h1>
+    {{ hosting.review }}
+
+    <div class="visit">
+      <span>
+        Visit site
+      </span>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

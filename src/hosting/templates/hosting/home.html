@@ -1,0 +1,79 @@
+{% extends "hosting/base.html" %}
+
+{% block content %}
+
+<div class="home__header">
+  <h1>
+    The Top Hosting Companies of 2015
+  </h1>
+
+  <p>
+    <em>TopHosting</em> is one of the most reliable source for Web Hosting reviews.
+    Considering that there are a lot of web hosting services to take into account.
+    We help webmasters to make the right desition while choosing a webhost.
+  </p>
+
+</div>
+
+<div class="home__content">
+  <div class="home__table">
+    <table class="top-host">
+      <thead>
+        <th>
+          Hosting
+        </th>
+        <th>
+          Price per month
+        </th>
+        <th>
+          Features
+        </th>
+        <th>
+          Score
+        </th>
+        <th>
+          &nbsp;
+        </th>
+      </thead>
+      <tbody>
+        {% for hosting in hosting_list %}
+          <tr>
+            <td>
+              <img src="{{ hosting.logo.url }}" />
+            </td>
+            <td class="align-center price">
+              <span class="old">
+                ${{ hosting.old_price }}
+              </span>
+              <span class="new">
+                ${{ hosting.price }}
+              </span>
+            </td>
+            <td>
+              {{ hosting.features }}
+            </td>
+            <td class="align-center score">
+              {{ hosting.score }}
+              <a href="{% url 'hosting:review' hosting.slug %}">
+                <span class="review">
+                  review
+                </span>
+              </a>
+            </td>
+            <td class="visit">
+              <span>
+                Visit site
+              </span>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="home__sidebar">
+    ok
+  </div>
+</div>
+
+
+{% endblock %}

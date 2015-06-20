@@ -1,0 +1,73 @@
+/* Home
+========================================================================== */
+
+.home__header {
+  margin-bottom: 1rem;
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+.home__content {
+  @include outer-container;
+}
+
+.home__table {
+  @include span-columns(9);
+  font-size: 0.9rem;
+
+  th {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  tbody {
+    tr:hover {
+      // cursor: pointer;
+      background: darken(white, 1);
+    }
+  }
+
+  .price {
+    .old {
+      display: block;
+      text-decoration: line-through;
+      color: lighten($dark-gray, 30);
+
+    }
+
+    .new {
+      color: $alizarin;
+      display: block;
+      font-size: 1.3rem;
+      line-height: 1;
+      font-weight: bold;
+    }
+  }
+
+  .score {
+    color: $green-sea;
+    font-size: 2.5rem;
+
+    .review {
+      color: $belize-hole;
+      display: block;
+      line-height: 0.5;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
+  .visit {
+    span {
+      @include button(flat, darken($alizarin, 7.5));
+    }
+  }
+}
+
+
+.home__sidebar {
+  @include span-columns(3);
+}

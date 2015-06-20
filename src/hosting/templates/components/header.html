@@ -1,0 +1,16 @@
+{% load static %}
+
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="{% url 'hosting:home' %}" class="logo">
+      <img src="{% static 'hosting/img/logo.png' %}" alt="Logo Image">
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        <li class="nav-link"><a href="javascript:void(0)">Top hosting</a></li>
+        {% comment %}<li class="nav-link"><a href="javascript:void(0)">{% now "F" %} promo codes</a></li>{% endcomment %}
+      </ul>
+    </nav>
+  </div>
+</header>
