@@ -33,7 +33,9 @@
         <div class="score">
           {{ top_hosting.score }}
           <div class="review">
-            review
+            <a href="{% url 'hosting:review' top_hosting.slug %}">
+              review
+            </a>
           </div>
         </div>
         <div class="visit">
