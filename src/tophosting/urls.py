@@ -5,6 +5,6 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^', include('hosting.urls', namespace='hosting')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include('hosting.urls', namespace='hosting')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
