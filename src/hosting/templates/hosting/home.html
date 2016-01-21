@@ -1,5 +1,8 @@
 {% extends "hosting/base.html" %}
 
+{% load hosting_extras %}
+
+
 {% block content %}
 
 <div class="home__header">
@@ -37,7 +40,7 @@
       </thead>
       <tbody>
         {% for hosting in hosting_list %}
-          <tr>
+          <tr href="{% url 'hosting:click' hosting.slug %}" class="tr-click">
             <td>
               <img src="{{ hosting.logo.url }}" />
             </td>
@@ -49,16 +52,16 @@
                 ${{ hosting.price }}
               </span>
             </td>
-            <td>
-              {{ hosting.features }}
+            <td class="features">
+              {{ hosting.features|format_features|safe }}
             </td>
             <td class="align-center score">
-              {{ hosting.score }}
-              <a href="{% url 'hosting:review' hosting.slug %}">
+              {{ hosting.score|floatformat:1 }}
                 <span class="review">
-                  review
+                  <a href="{% url 'hosting:review' hosting.slug %}" class="a-click">
+                    review
+                  </a>
                 </span>
-              </a>
             </td>
             <td class="visit">
               <span>
@@ -69,9 +72,56 @@
         {% endfor %}
       </tbody>
     </table>
+
+    <h2 class="home-footer">How does Top Hosting maks the reviews?</h2>
+
+    <p>
+      We have been reviewing hostings for <strong><u>over 10 years</u></strong>. We tried every hosting that appears on the list,
+      plus a tons more that are not listed because of their quality. We take into account the factors mentioned in "How Top Hosting scores each host?".
+      <br /><br />
+      Over the years we learned the best way to test web hosts. We love our job, and we are continuously improving our testing techniques.
+    </p>
   </div>
   <div class="home__sidebar">
-    ok
+    <div class="sidebar-item">
+      <h2>Follow us Google+</h2>
+      <!-- Place this tag where you want the widget to render. -->
+      <div class="g-page" data-width="215" data-href="//plus.google.com/u/0/105266721442162097952" data-showcoverphoto="false" data-rel="publisher"></div>
+
+      <!-- Place this tag after the last widget tag. -->
+      <script type="text/javascript">
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/platform.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+      </script>
+    </div>
+
+    <div class='sidebar-item'>
+      <h2>How Top Hosting scores each host?</h2>
+
+      <p>
+        Every hosting passes a regorous tests. There are four factors we take into account.
+        <br />
+        <br />
+        <strong>Speed</strong>, we test a web aplication with a high number of concurrency. We test the response time every 100x concurrent users.
+        <br />
+        <br />
+        <strong>Uptime</strong>, we have been monitoring every web application making requests every 30 seconds for each web application. Then we measure the uptime trough the month.
+        <br />
+        <br />
+        <strong>Features</strong>, each hosting offers additional and unique features that others do not have. These features are very important and are shown on the list.
+        <br />
+        <br />
+        <strong>Support</strong>, we like to be in trouble with our web application. We ask a lot. We take into account, response time, number of responses until a solution is found, and although this factor may be subjective, we also take into account kindness.
+        <br />
+        <br />
+        <strong>Price</strong>, this may be the most important factor. We update continuously the prices on the list. We search the best price currently available in all hostings.
+      </p>
+
+
+    </div>
   </div>
 </div>
 

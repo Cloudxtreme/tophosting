@@ -10,7 +10,7 @@ class Hosting(models.Model):
     affiliate_link = models.URLField()
     review = models.TextField()
 
-    score = models.IntegerField(default=0)
+    score = models.DecimalField(default=0, max_digits=5, decimal_places=2)
     old_price = models.DecimalField(default=0, max_digits=5, decimal_places=2)
     price = models.DecimalField(default=0, max_digits=5, decimal_places=2)
 
@@ -21,3 +21,11 @@ class Hosting(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Click(models.Model):
+    hosting = models.ForeignKey(Hosting)
+    ip = models.CharField(max_length=100, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

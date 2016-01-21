@@ -1,0 +1,32 @@
+/* Page
+========================================================================== */
+
+.page {
+  @include outer-container;
+
+  h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    @include margin(null 2rem 2rem);
+  }
+
+  h2 {
+    margin-top: 1.8rem;
+    font-size: 1.2rem;
+  }
+
+  ol {
+    margin-bottom: 1.8rem;
+  }
+
+  li {
+    margin-top: 1.8rem;
+  }
+
+}
+
+.page__content {
+  @include span-columns(8);
+  @include shift(2);
+  @include omega();
+}

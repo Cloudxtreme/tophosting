@@ -1,0 +1,17 @@
+{% extends "hosting/base.html" %}
+
+{% block content %}
+
+<div class="page">
+  <h1>{% block page_title %}{% endblock %}</h1>
+
+  <div class="page__content">
+    {% block page_content %}{% endblock %}
+  </div>
+</div>
+
+<p class="align-center add-top-margin">
+  <a href="/"><strong>&larr; Back to Top Hosting</strong></a>
+</p>
+
+{% endblock %}

@@ -23,9 +23,12 @@
   }
 
   tbody {
-    tr:hover {
-      // cursor: pointer;
+    tr {
       background: darken(white, 1);
+    }
+    tr:hover {
+      cursor: pointer;
+      background: darken(white, 2.5);
     }
   }
 
@@ -60,14 +63,35 @@
     }
   }
 
+  .features {
+    font-size: 0.75rem;
+  }
+
+  .check {
+    color: #4884D3;
+  }
+
   .visit {
     span {
       @include button(flat, darken($alizarin, 7.5));
     }
+  }
+
+  .home-footer {
+    margin-top: 2rem;
   }
 }
 
 
 .home__sidebar {
   @include span-columns(3);
+
+  .sidebar-item {
+    margin-top: 0.75em;
+    margin-bottom: 1.5em;
+  }
+
+  p {
+      font-size: 0.9rem;
+  }
 }

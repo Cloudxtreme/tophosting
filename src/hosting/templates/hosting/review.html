@@ -9,9 +9,11 @@
         <img src="{{ hosting.avatar.url }}" />
       </div>
       <div class="review-info__visit">
-        <span>
-          Visit site
-        </span>
+        <a href="{% url 'hosting:click' hosting.slug %}" target="_blank">
+          <span>
+            Visit site
+          </span>
+        </a>
       </div>
       <div class="review-info__score">
         {{ hosting.score }}
@@ -39,9 +41,11 @@
           </div>
         </div>
         <div class="visit">
-          <span>
-            Visit site
-          </span>
+          <a href="{% url 'hosting:click' hosting.slug %}" target="_blank">
+            <span>
+              Visit site
+            </span>
+          </a>
         </div>
       </div>
       {% endfor %}
@@ -54,9 +58,11 @@
     {{ hosting.review|safe|linebreaks }}
 
     <div class="visit">
-      <span>
-        Visit site
-      </span>
+      <a href="{% url 'hosting:click' hosting.slug %}" target="_blank">
+        <span>
+          Visit site
+        </span>
+      </a>
     </div>
   </div>
 </div>

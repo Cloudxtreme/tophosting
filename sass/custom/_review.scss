@@ -76,7 +76,8 @@
 }
 
 .sidebar-host__item {
-  @include margin(1.4rem null);
+  @include margin(2rem null);
+  @include clearfix;
 
   .logo {
     @include span-columns(5);
@@ -124,6 +125,7 @@
   }
 
   .visit {
+    margin-top: 2rem;
     font-size: 1.5rem;
     text-align: center;
 

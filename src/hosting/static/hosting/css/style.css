@@ -825,8 +825,11 @@ header.navigation {
   .home__table th {
     font-size: 0.9rem;
     text-align: center; }
-  .home__table tbody tr:hover {
+  .home__table tbody tr {
     background: #fcfcfc; }
+  .home__table tbody tr:hover {
+    cursor: pointer;
+    background: #f9f9f9; }
   .home__table .price .old {
     display: block;
     text-decoration: line-through;
@@ -847,6 +850,10 @@ header.navigation {
       font-size: 0.8rem;
       font-weight: bold;
       text-decoration: underline; }
+  .home__table .features {
+    font-size: 0.75rem; }
+  .home__table .check {
+    color: #4884D3; }
   .home__table .visit span {
     background-color: #e12e1c;
     border-radius: 3px;
@@ -867,6 +874,8 @@ header.navigation {
     .home__table .visit span:disabled {
       cursor: not-allowed;
       opacity: 0.5; }
+  .home__table .home-footer {
+    margin-top: 2rem; }
 
 .home__sidebar {
   float: left;
@@ -875,6 +884,11 @@ header.navigation {
   width: 23.23176%; }
   .home__sidebar:last-child {
     margin-right: 0; }
+  .home__sidebar .sidebar-item {
+    margin-top: 0.75em;
+    margin-bottom: 1.5em; }
+  .home__sidebar p {
+    font-size: 0.9rem; }
 
 /* Review
 ========================================================================== */
@@ -993,8 +1007,12 @@ header.navigation {
     text-align: center; }
 
 .sidebar-host__item {
-  margin-top: 1.4rem;
-  margin-bottom: 1.4rem; }
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+  .sidebar-host__item::after {
+    clear: both;
+    content: "";
+    display: table; }
   .sidebar-host__item .logo {
     float: left;
     display: block;
@@ -1056,6 +1074,7 @@ header.navigation {
   .review__content h1 {
     font-size: 1.5rem; }
   .review__content .visit {
+    margin-top: 2rem;
     font-size: 1.5rem;
     text-align: center; }
     .review__content .visit span {
@@ -1084,6 +1103,9 @@ header.navigation {
 .add-margin {
   margin-bottom: .5rem; }
 
+.add-top-margin {
+  margin-top: 2rem; }
+
 .remove-margin {
   margin: 0; }
 
@@ -1095,5 +1117,49 @@ header.navigation {
 
 .align-center {
   text-align: center; }
+
+/* Page
+========================================================================== */
+.page {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .page::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .page h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 2rem; }
+  .page h2 {
+    margin-top: 1.8rem;
+    font-size: 1.2rem; }
+  .page ol {
+    margin-bottom: 1.8rem; }
+  .page li {
+    margin-top: 1.8rem; }
+
+.page__content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  margin-left: 17.05961%;
+  margin-right: 0; }
+  .page__content:last-child {
+    margin-right: 0; }
+
+/* Footer
+========================================================================== */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  margin: 2rem;
+  color: #999; }
+  footer a {
+    color: #999; }
 
 /*# sourceMappingURL=style.css.map */
